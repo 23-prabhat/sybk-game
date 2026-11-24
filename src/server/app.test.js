@@ -68,6 +68,17 @@ test('ranked runs resume at the saved clue and a duplicated finish scores once',
   assert.equal(ballot.choices.find((entry) => entry.id === 'satire').votes, 1);
 });
 
+test('a tab left open on the hub cannot advance the next day’s round', async () => {
+  const { call, tick } = harness();
+  const first = (await call('solo', 'Alice', { type: 'start' })).data;
+  tick(86_400_000);
+  const stale = { type: 'skip', date: first.date, version: first.run.version };
+
+  assert.equal((await call('solo', 'Alice', stale)).status, 409);
+  assert.equal((await call('bootstrap', 'Alice')).data.progress, null);
+  assert.equal((await call('solo', 'Alice', stale, first.date)).data.run.phase, 'reveal');
+});
+
 test('live matchmaking admits two real identities and only one concurrent buzzer claim', async () => {
   const { call, tick } = harness();
   const first = await call('duel/queue', 'Alice', {});
