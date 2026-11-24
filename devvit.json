@@ -1,0 +1,24 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "sybk-game",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": { "entry": "splash.html", "height": "regular" },
+      "game": { "entry": "index.html" }
+    }
+  },
+  "server": { "dir": "dist/server", "entry": "index.cjs" },
+  "permissions": { "redis": true, "realtime": true, "reddit": { "enable": true } },
+  "menu": {
+    "items": [
+      { "label": "Create or open the SYBK hub", "location": "subreddit", "forUserType": "moderator", "endpoint": "/internal/menu/hub" },
+      { "label": "Create the SYBK daily post", "location": "subreddit", "forUserType": "moderator", "endpoint": "/internal/menu/daily" },
+      { "label": "Review today’s SYBK clue reports", "location": "subreddit", "forUserType": "moderator", "endpoint": "/internal/menu/reports" }
+    ]
+  },
+  "scheduler": {
+    "tasks": { "daily": { "cron": "1 0 * * *", "endpoint": "/internal/scheduler/daily" } }
+  },
+  "scripts": { "dev": "vite build --watch", "build": "vite build" }
+}

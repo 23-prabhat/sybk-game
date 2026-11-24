@@ -1,0 +1,25 @@
+{
+  "name": "sybk-game",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24.18.0"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "devvit playtest",
+    "preview": "npm run build && node tools/preview.js",
+    "check": "node --test --test-isolation=none"
+  },
+  "dependencies": {
+    "@devvit/start": "0.15.6",
+    "@devvit/web": "0.15.6",
+    "@hono/node-server": "2.1.6",
+    "hono": "4.13.17"
+  },
+  "devDependencies": {
+    "devvit": "0.15.6",
+    "vite": "8.3.7"
+  }
+}

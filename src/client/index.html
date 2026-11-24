@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#291830">
+  <title>SYBK · Show Your Ball Knowledge</title>
+  <link rel="icon" href="./art/pip.webp">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="app">
+    <header class="masthead">
+      <button class="wordmark" data-act="daily" aria-label="SYBK Daily Solo">SYBK<span>.</span></button>
+      <nav aria-label="Game">
+        <button data-act="daily" data-nav="solo">Daily Solo</button>
+        <button data-act="duels" data-nav="duels">Live Duels</button>
+        <button data-act="ranks" data-nav="ranks">Ranks</button>
+      </nav>
+    </header>
+    <main id="screen" tabindex="-1">
+      <div class="boot"><img alt="" src="./art/pip.webp"><h1>Loading today’s clues…</h1></div>
+    </main>
+    <div class="sr-only" id="announcer" role="status" aria-live="polite"></div>
+    <p class="notice" id="message" role="status" hidden></p>
+    <footer>
+      <span>SYBK · Show Your Ball Knowledge</span>
+      <button data-act="help">How to play</button>
+    </footer>
+  </div>
+  <dialog id="dialog" aria-labelledby="dialog-title"></dialog>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

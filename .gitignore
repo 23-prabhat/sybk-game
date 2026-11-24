@@ -1,0 +1,10 @@
+node_modules/
+dist/
+.devvit/
+.playwright-cli/
+.env
+.env.*
+!.env.example
+/assets/concepts/
+/references/
+/plan.md
