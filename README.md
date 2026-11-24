@@ -4,6 +4,8 @@
 
 SYBK is a Devvit Web game hosted by Pip, a pigeon with a microphone and strong opinions. Play from a Reddit Interactive Post.
 
+![SYBK Daily Solo with Pip and a silhouette clue](docs/gameplay.webp)
+
 ## Play
 
 - **Daily Solo** serves the same five authored clues to everyone on a given UTC date. Name a black silhouette or take on a caption, audio, or tile clue. You get one guess per question. Ask Pip for a free hint and keep the question worth 100, or trade 30 points from that question’s reward for a stronger clue and play for 70. The original art appears in the reveal. Pip introduces the board on the first visit and coaches tile play, misses, and streaks. Signed-in players can resume, see their daily and weekly rankings, and vote for the weekend’s theme.
